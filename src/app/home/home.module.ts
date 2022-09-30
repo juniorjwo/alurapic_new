@@ -1,3 +1,4 @@
+import { SignUpService } from './singup/signup.service';
 import { NgModule } from '@angular/core';
 import { SignInComponent } from './signin/signin.component';
 import { ReactiveFormsModule, FormsModule }  from '@angular/forms';
@@ -21,6 +22,9 @@ import { HomeRoutingModule } from './home.routing.module';
         VMessageModule,
         RouterModule,
         HomeRoutingModule
+    ],
+    providers:[
+      SignUpService
     ]
 })
 export class HomeModule { }
