@@ -1,14 +1,14 @@
 <header class="fixed-top">
   <nav class="navbar navbar-light bg-white">
     <a [routerLink]="['']"class="navbar-brand" style="cursor:pointer">
-      <i (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+      <i tabindex="0" (keyup.space)="menu.toggle()" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
       ALURAPIC</a>
     <ap-menu #menu>
-<ul>
-  <li>Menu ITEM 1</li>
-  <li>Menu ITEM 2</li>
-  <li>Menu ITEM 3</li>
-  <li>Menu ITEM 4</li>
+<ul class="list-unstyled">
+  <li>
+    <a showIfLogged [routerLink]="['p','add']">Uplopad</a>
+  </li>
+
 </ul>
 
     </ap-menu>

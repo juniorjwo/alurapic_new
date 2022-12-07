@@ -9,11 +9,12 @@ import { AlertModule } from '../shared/components/alert/alert.module';
 import { FooterComponent } from "./footer/footer.component";
 import { LoadingModule } from '../shared/components/loading/loading.module';
 import { MenuModule } from '../shared/components/menu/menu.module';
+import { ShowIfLoggedModule } from '../shared/directives/darken-on-hover/show-if-logged/show-if-logged.module';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   exports: [HeaderComponent, FooterComponent],
-  imports: [CommonModule, RouterModule,AlertModule,LoadingModule,MenuModule],
+  imports: [CommonModule, RouterModule,AlertModule,LoadingModule,MenuModule,ShowIfLoggedModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
