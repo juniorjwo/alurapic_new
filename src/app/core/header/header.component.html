@@ -1,18 +1,33 @@
 <header class="fixed-top">
-    <nav class="navbar navbar-light bg-white">
-        <a class="navbar-brand">ALURAPIC</a>
+  <nav class="navbar navbar-light bg-white">
+    <a [routerLink]="['']"class="navbar-brand" style="cursor:pointer">
+      <i (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+      ALURAPIC</a>
+    <ap-menu #menu>
+<ul>
+  <li>Menu ITEM 1</li>
+  <li>Menu ITEM 2</li>
+  <li>Menu ITEM 3</li>
+  <li>Menu ITEM 4</li>
+</ul>
 
-        <div *ngIf="(user$ | async) as user; else login">
-            <i class="fa fa-user-circle mr-1"></i>
-            <a class="mr-1">{{ user.name}}</a>
-            <a (click)="logout()">(Logout)</a>
-        </div>
+    </ap-menu>
 
-        <ng-template #login>
-            <span class="navbar-text">
-                <a [routerLink]="['']">Please, login!</a>
-            </span>
-        </ng-template> 
+    <div *ngIf="(user$ | async) as user; else login">
+      <i class="fa fa-user-circle mr-1"></i>
+      <a class="mr-1">{{ user.name}}</a>
+      <a style="cursor: pointer;" (click)="logout()"><b>[Logout]</b></a>
+    </div>
 
-    </nav>
+    <ng-template #login>
+      <span class="navbar-text">
+        <a [routerLink]="['']">Please, login!</a>
+      </span>
+    </ng-template>
+
+  </nav>
+  <div class="fixed-top">
+    <ap-loading></ap-loading>
+    <ap-alert></ap-alert>
+  </div>
 </header>
